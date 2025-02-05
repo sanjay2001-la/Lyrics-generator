@@ -17,7 +17,9 @@ export async function generateLyrics(preferences: Preferences) {
     3. Should the story behind the lyrics be happy, bittersweet, motivational, or romantic? ${preferences.storyTone}
     4. What imagery or metaphors do you want included (e.g., stars, oceans, roads, seasons)? ${preferences.imagery}
     5. What perspective should the lyrics be from (first-person, third-person, or conversational)? ${preferences.perspective}
-    6. Generate the lyrics within 100 words in ${preferences.language}.
+    6. Generate the lyrics in ${preferences.language}.
+
+    The lyrics should be within 90 words and it should be complete.
   `;
 
     try {
@@ -33,7 +35,8 @@ export async function generateLyrics(preferences: Preferences) {
                 headers: {
                     Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
                     'Content-Type': 'application/json',
-                },
+                }
+
             }
         );
 
